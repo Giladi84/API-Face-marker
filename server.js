@@ -13,11 +13,8 @@ const image = require('./controllers/image')
 const knex = require('knex')({
   client: 'pg',
   connection: {
-    host : '127.0.0.1',
-    port : 5432,
-    user : 'postgres',
-    password : 'gil8484adi',
-    database : 'Face Marker'
+    connectionString: process.env.DATABASE_URL,
+    ssl: {rejectUnauthorized: false}
   }
 });
 
